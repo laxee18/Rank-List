@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST RANK REALITY PROJECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercave.com/w/wp12888491.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white; /* Mengubah warna teks menjadi putih agar terbaca di atas gambar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Menjadikan tinggi halaman penuh */
+        }
+        
+        .container {
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.7); /* Menambahkan latar belakang transparan untuk kontainer */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+        }
+        
+        .rank-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .rank-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            color: #ddd; /* Warna abu-abu terang */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Transisi untuk perubahan warna */
+        }
+
+        .rank-list li.active {
+            background-color: #444; /* Warna latar belakang saat dipilih */
+            color: #fff; /* Warna teks saat dipilih */
+        }
+
+        .rank-list li p {
+            margin: 0; /* Menghapus margin bawaan dari elemen <p> di dalam <li> */
+        }
+
+        #rank-details p {
+            text-align: left; /* Mengatur teks agar rata kiri */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦊 LIST RANK 🦊</h1>
+        <ul class="rank-list">
+            <li data-price="Rp.10.000
+            <li>(5K/Bulan) (20K Permanen)</li>" data-feature="➥ FITUR :
+                <p>6 Homes</p>
+                <p>100.000 Money</p>
+                <p>10.000 Block Claim</p>
+                <p>/feed</p>
+            ">1. AQUANAUTS</li>
+            <li data-price="Rp.15.000
+            <li>(10K/Bulan) (30K Permanen)</li>" data-feature="➥  FITUR :
+                <p>8 Homes</p>
+                <p>150.000 Money</p>
+                <p>12.000 Block Claim</p>
+                <p>/feed</p>
+                <p>/heal</p>
+            ">2. ATLAS</li>
+            <li data-price="Rp.25.000
+            <li>(15K/Bulan) (45K Permanen)</li>" data-feature="➥  FITUR :
+                <p>12 Homes</p>
+                <p>250.000 Money</p>
+                <p>15.000 Block Claim</p>
+                <p>/nick</p>
+                <p>/feed</p>
+                <p>/heal</p>
+                <p>/fly</p>
+            ">3. SERPENT</li>
+            <li data-price="Rp.50.000
+            <li>(20K/Bulan) (80K Permanen)</li>" data-feature="➥  FITUR :
+                <p>14 Homes</p>
+                <p>500.000 Money</p>
+                <p>20.000 Block Claim</p>
+                <p>/nick</p>
+                <p>/feed</p>
+                <p>/heal</p>
+                <p>/fly</p>
+                <p>/repair</p>
+            ">4. LEVIATHAN</li>
+            <li data-price="Rp.100.000
+            <li>(30K/Bulan) (150K Permanen)</li>" data-feature="➥  FITUR :
+                <p>16 Homes</p>
+                <p>500.000 Money</p>
+                <p>25.000 Block Claim</p>
+                <p>/nick</p>
+                <p>/feed</p>
+                <p>/heal</p>
+                <p>/fly</p>
+                <p>/repair all</p>
+                <p>/ec (enderchest)</p>
+            ">5. CUSTOM PREFIX</li>
+            <li data-price="Gratisss!" data-feature="
+                <p>Chat Owner: 0882-1529-2453</p>
+                <p>Youtube Rank</p>
+                <p>Tiktok Rank</p>
+            ">6. RANK SPECIAL</li>
+        </ul>
+        <div id="rank-details">
+            <p>Select a rank to see details</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const rankItems = document.querySelectorAll('.rank-list li');
+            const rankDetails = document.getElementById('rank-details');
+
+            rankItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Menghapus kelas aktif dari semua item
+                    rankItems.forEach(i => i.classList.remove('active'));
+                    // Menambahkan kelas aktif ke item yang diklik
+                    this.classList.add('active');
+
+                    const price = this.getAttribute('data-price');
+                    const feature = this.getAttribute('data-feature');
+                    rankDetails.innerHTML = `<p>Price: ${price}</p>${feature}`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>

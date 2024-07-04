@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIST RANK REALITY PROJECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapercave.com/w/wp12888491.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white; /* Mengubah warna teks menjadi putih agar terbaca di atas gambar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Menjadikan tinggi halaman penuh */
+        }
+        
+        .container {
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.7); /* Menambahkan latar belakang transparan untuk kontainer */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #f9f9f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-bottom: 20px;
+        }
+        
+        .rank-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .rank-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+            color: #ddd; /* Warna abu-abu terang */
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Transisi untuk perubahan warna */
+        }
+
+        .rank-list li.active {
+            background-color: #444; /* Warna latar belakang saat dipilih */
+            color: #fff; /* Warna teks saat dipilih */
+        }
+
+        #rank-details p {
+            text-align: left; /* Mengatur teks agar rata kiri */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🦊 LIST RANK 🦊</h1>
+        <ul class="rank-list">
+            <li data-price="Rp.10.000<p>(5K/Bulan) (20K Permanen)</p>" data-feature="
+            <li> 6 Homes</li>
+            <li> 100.000 Money</li>
+            <li> 10.000 Block Claim</li>
+            <li> /feed</li>">1. AQUANAUTS</li>
+            <li data-price="Rp.15.000<p>(10K/Bulan) (30K Permanen)</p>" data-feature="
+            <li> 8 Homes</li>
+            <li> 150.000 Money</li>
+            <li> 12.000 Block Claim</li>
+            <li> /feed</li>
+            <li> /heal</li>">2. ATLAS</li>
+            <li data-price="Rp.25.000<p>(15K/Bulan) (45K Permanen)</p>" data-feature="
+            <li> 12 Homes</li>
+            <li> 250.000 Money</li>
+            <li> 15.000 Block Claim</li>
+            <li> /nick</li>
+            <li> /feed</li>
+            <li> /heal</li>
+            <li> /fly</li>">3. SERPENT</li>
+            <li data-price="Rp.50.000<p>(20K/Bulan) (80K Permanen)</p>" data-feature="
+            <li> 14 Homes</li>
+            <li> 500.000 Money</li>
+            <li> 20.000 Block Claim</li>
+            <li> /nick</li>
+            <li> /feed</li>
+            <li> /heal</li>
+            <li> /fly</li>
+            <li> /repair</li>">4. LEVIATHAN</li>
+            <li data-price="Rp.100.000<p>(30K/Bulan) (150K Permanen)</p>" data-feature="
+            <li> 16 Homes</li>
+            <li> 500.000 Money</li>
+            <li> 25.000 Block Claim</li>
+            <li> /nick</li>
+            <li> /feed</li>
+            <li> /heal</li>
+            <li> /fly</li>
+            <li> /repair all</li>
+            <li> /ec (enderchest)</li>">5. CUSTOM PREFIX</li>
+            <li data-price="Gratisss!" data-feature=" Chat Owner: 0882-1529-2453
+            <li> Youtube Rank</li>
+            <li> Tiktok Rank</li>">6. RANK SPECIAL</li>
+        </ul>
+        <div id="rank-details">
+            <p>Select a rank to see details</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const rankItems = document.querySelectorAll('.rank-list li');
+            const rankDetails = document.getElementById('rank-details');
+
+            rankItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // Menghapus kelas aktif dari semua item
+                    rankItems.forEach(i => i.classList.remove('active'));
+                    // Menambahkan kelas aktif ke item yang diklik
+                    this.classList.add('active');
+
+                    const price = this.getAttribute('data-price');
+                    const feature = this.getAttribute('data-feature');
+                    rankDetails.innerHTML = `<p>Price: ${price}</p><p>${feature}</p>`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
